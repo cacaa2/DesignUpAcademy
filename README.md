@@ -1,18 +1,33 @@
-# LayarKelas
+# DesignUp Academy
 
-**Kelas:** WebDev B
 **Kelompok:** 6
-**Tema Bisnis:** Akademi Kursus Daring Desain Antarmuka dan Pengalaman Pengguna
-**Link Website (GitHub Pages):** https://[username].github.io/[nama-repo]/
+**Kelas:** WebDev B
 
-## Daftar Anggota
+## Tema Studi Kasus Bisnis
 
-| No | Nama Lengkap | NIM | Role | Bagian yang dikerjakan |
+Akademi Kursus Daring Desain Antarmuka dan Pengalaman Pengguna
+
+Katalog 3 paket: Kelas Dasar Desain Visual, Kelas Sistem Desain, dan Kelas Portofolio Profesional.
+
+## Tautan Website (GitHub Pages)
+
+https://cacaa2.github.io/layarkelas/
+
+## Daftar Anggota Kelompok
+
+| No | Nama Lengkap | NIM | Role | Bagian yang Dikerjakan |
 |----|--------------|-----|------|------------------------|
-| 1 | [Nama] | [NIM] | CEO | Repositori GitHub, README.md, header dan footer |
-| 2 | [Nama] | [NIM] | PRODUCT MANAGER 1 | Hero section |
-| 3 | [Nama] | [NIM] | PRODUCT MANAGER 2 | Catalog section |
-| 4 | [Nama] | [NIM] | UI/UX DESIGNER 1 | Warna, tipografi, tata letak, responsif |
-| 5 | [Nama] | [NIM] | UI/UX DESIGNER 2 | Kartu katalog, form kalkulator, efek tombol |
-| 6 | [Nama] | [NIM] | SOFTWARE ENGINEER 1 | Form kalkulator dan fungsi perhitungan |
-| 7 | [Nama] | [NIM] | SOFTWARE ENGINEER 2 | Logika diskon dan tampilan hasil |
+| 1 | Nabila Efa Hanifah | 1710625038 | CEO | Repositori GitHub, README.md, header dan footer pada index.html |
+| 2 | Audrey Rara Wulandari | 1710625082 | PRODUCT MANAGER | Hero section (judul, penjelasan, 3 keunggulan, tombol ajakan bertindak) |
+| 3 | Firania Khalisa Arfenti | 1710625110 | PRODUCT MANAGER | Catalog section (3 paket layanan, harga, kode promo) |
+| 4 | Aileen Sebayang | 1710625050 | UI/UX DESIGNER | styles.css: warna, tipografi, tata letak Grid, media query |
+| 5 | Zaviena Bintang Nugraha | 1710625162 | UI/UX DESIGNER | styles.css: kartu katalog, form kalkulator, bayangan, efek hover tombol |
+| 6 | Aulia Yunianti Kurmiadi | 1710625070 | SOFTWARE ENGINEER | Form kalkulator pada index.html dan fungsi perhitungan harga di script.js |
+| 7 | Hana Salsabila | 1710625122 | SOFTWARE ENGINEER | Logika diskon kode promo (if/else) dan tampilan hasil di script.js |
+
+## Struktur File
+
+- `index.html`: kerangka dan konten halaman
+- `styles.css`: desain tampilan
+- `script.js`: kalkulator biaya dan logika diskon
+- `README.md`: identitas kelompok dan tautan website
