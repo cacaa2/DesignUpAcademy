@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap");
+
+/* ===== UI/UX 1: warna, tipografi, tata letak ===== */
+:root {
+  --ink: #1a1b35;
+  --muted: #5b5f7a;
+  --bg: #f3f4fa;
+  --dot: #c9cde3;
+  --line: #dde0ee;
+  --white: #ffffff;
+  --violet: #6c47ff;
+  --violet-dark: #5636e0;
+  --violet-soft: #eee9ff;
+  --select: #0d99ff;
+  --danger: #b3261e;
+  --gutter: max(5%, calc((100% - 1080px) / 2));
+  --font-head: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  --font-body: "DM Sans", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1.65;
+  background-color: var(--bg);
+  /* kertas kerja ala kanvas desain */
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; }
+h2 { font-size: 2rem; margin-bottom: 8px; }
+h3 { font-size: 1.25rem; margin-bottom: 10px; }
+
+:focus-visible { outline: 3px solid var(--select); outline-offset: 3px; }
+
+/* Header (CEO) */
+#header-section {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--ink);
+  color: var(--white);
+  padding: 14px var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header-section .header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.brand { font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; color: var(--white); }
+#header-section nav { display: flex; gap: 24px; }
+#header-section nav a { color: #cfd3ee; text-decoration: none; font-weight: 500; }
+#header-section nav a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 6px; }
+
+/* Hero (PM 1) */
+#hero-section { padding: 88px var(--gutter) 72px; }
+.hero-content { max-width: 720px; }
+
+/* satu momen khas: judul tampak "terpilih" seperti objek di kanvas desain */
+.hero-content h1 {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  letter-spacing: -0.02em;
+  padding: 12px 20px;
+  margin: 0 0 28px -20px;
+  outline: 1.5px solid var(--select);
+}
+.hero-content h1::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--white), var(--white)) left 2px top 2px / 5px 5px no-repeat,
+    linear-gradient(var(--white), var(--white)) right 2px top 2px / 5px 5px no-repeat,
+    linear-gradient(var(--white), var(--white)) left 2px bottom 2px / 5px 5px no-repeat,
+    linear-gradient(var(--white), var(--white)) right 2px bottom 2px / 5px 5px no-repeat,
+    linear-gradient(var(--select), var(--select)) left top / 10px 10px no-repeat,
+    linear-gradient(var(--select), var(--select)) right top / 10px 10px no-repeat,
+    linear-gradient(var(--select), var(--select)) left bottom / 10px 10px no-repeat,
+    linear-gradient(var(--select), var(--select)) right bottom / 10px 10px no-repeat;
+}
+
+.hero-content p { font-size: 1.125rem; color: var(--muted); max-width: 60ch; margin-bottom: 24px; }
+
+.hero-benefits { list-style: none; margin-bottom: 32px; }
+.hero-benefits li { position: relative; padding-left: 34px; margin-bottom: 10px; font-weight: 500; }
+.hero-benefits li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--violet);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+
+/* Katalog (PM 2): CSS Grid */
+#catalog-section { padding: 56px var(--gutter) 72px; }
+.catalog-intro { color: var(--muted); margin-bottom: 32px; }
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Kalkulator (SE) */
+#calc-section { padding: 56px var(--gutter) 80px; }
+#calc-section .container { width: 100%; }
+#calc-section .sub, #calc-section > p { color: var(--muted); margin-bottom: 28px; }
+
+/* Footer (CEO) */
+#footer-section {
+  background: var(--ink);
+  color: #cfd3ee;
+  padding: 32px var(--gutter);
+  font-size: 0.95rem;
+}
+#footer-section p + p { margin-top: 4px; }
+
+/* ===== UI/UX 2: kartu, form, tombol ===== */
+.catalog-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 34px 26px 26px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(26, 27, 53, 0.07);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+/* strip warna makin pekat = tingkat kelas makin tinggi */
+.catalog-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #b9a6ff; }
+.catalog-card:nth-child(2)::before { background: #8566ff; }
+.catalog-card:nth-child(3)::before { background: #4b2bd6; }
+
+.catalog-card:hover {
+  border-color: var(--select);
+  box-shadow: 0 0 0 1.5px var(--select), 0 14px 32px rgba(26, 27, 53, 0.12);
+}
+.catalog-card p { color: var(--muted); }
+.catalog-card .price {
+  margin-top: auto;
+  padding-top: 20px;
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.catalog-card .promo {
+  margin-top: 12px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: var(--violet-soft);
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+.catalog-card .promo strong { color: var(--violet-dark); }
+
+.calc-box {
+  max-width: 540px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(26, 27, 53, 0.07);
+}
+#calc-section label { display: block; font-weight: 700; margin: 16px 0 6px; }
+#calc-section label:first-child { margin-top: 0; }
+#calc-section select,
+#calc-section input {
+  width: 100%;
+  padding: 11px 14px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+#calc-section select:hover,
+#calc-section input:hover { border-color: #b4b9d6; }
+#calc-section select:focus,
+#calc-section input:focus { outline: none; border-color: var(--violet); box-shadow: 0 0 0 3px var(--violet-soft); }
+
+/* Tombol */
+.btn, .btn-cta, #btn-hitung {
+  display: inline-block;
+  padding: 13px 28px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--violet);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+#btn-hitung { margin-top: 22px; }
+.btn:hover, .btn-cta:hover, #btn-hitung:hover {
+  background: var(--violet-dark);
+  box-shadow: 0 8px 18px rgba(108, 71, 255, 0.35);
+}
+
+/* Hasil kalkulator */
+#hasil { margin-top: 22px; }
+#hasil .rincian { background: var(--bg); border-radius: 12px; padding: 18px; }
+#hasil .baris { display: flex; justify-content: space-between; gap: 16px; padding: 5px 0; }
+#hasil .total {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1.5px solid var(--line);
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+#hasil .error { color: var(--danger); font-weight: 700; }
+
+/* ===== Responsif (media query) ===== */
+@media (max-width: 900px) {
+  .catalog-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  h2 { font-size: 1.6rem; }
+  #header-section nav { gap: 14px; font-size: 0.92rem; }
+  #hero-section { padding: 56px var(--gutter) 48px; }
+  .hero-content h1 { margin-left: 0; }
+  .calc-box { padding: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
